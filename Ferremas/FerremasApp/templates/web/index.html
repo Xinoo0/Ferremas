@@ -32,6 +32,9 @@
                         {% if user.is_authenticated %}
                         <div class="navbar-nav ms-auto">
                           <li class="navbar-nav">
+                            <a class="nav-link" href="{% url 'carrito' %}">Carrito</a>
+                          </li>
+                          <li class="navbar-nav">
                             <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
                           </li>
                           <li class="navbar-nav">

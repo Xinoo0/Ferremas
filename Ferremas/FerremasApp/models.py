@@ -30,3 +30,20 @@ class Productos(models.Model):
 
     def __str__(self):
         return self.nombre_producto
+
+
+# MODELO DE CARRITO
+class Carrito_Compras(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    articulo = models.ManyToManyField('articulo', related_name='carrito', blank=True)
+
+    def __str__(self):
+        return f"carrito de {self.usuario.username}"
+
+class Articulo(models.Model):
+    id_art = models.AutoField(primary_key=True)
+    nombre_articulo = models.CharField(max_length=100, blank=False, null=False)
+    valor = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.nombre_articulo

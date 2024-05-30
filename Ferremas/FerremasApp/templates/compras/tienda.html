@@ -4,23 +4,75 @@
 
 {% block body %}
 
-
+<!-- PRODUCTO 1 -->
 <div class="card" style="width: 18rem;">
-    <img src="{{pro.foto.url}}" class="card-img-top" alt="...">
+    <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/sodimacCL/8739404_00/w=1500,h=1500" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Nombre: {{pro.nombre_producto}}</h5>
-      <p class="card-text">Informacion: {{pro.descripcion_producto}}</p>
+      <h5 class="card-title">Nombre: Sierra Electrica</h5>
+      <p class="card-text">Informacion: La Sierra Circular Bauker de 1800W es la herramienta que necesitas para tus proyectos de hogar y construcción.</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Marca: {{pro.marca}}</li>
-      <li class="list-group-item">Cantidad: {{pro.cantidad}}</li>
-      <li class="list-group-item">Precio: {{pro.valor}}</li>
+      <li class="list-group-item">Marca: Bauker</li>
+      <li class="list-group-item">Cantidad: 10</li>
+      <li class="list-group-item">Precio: 150.000</li>
     </ul>
     <div class="card-body">
-      <button href="#" class="">Agregar al Carrito</button>
-      <button href="#" class="">Comprar Inmediatamente</button>
+        <form action="{% url 'agregar' %}" method="post" class="d-inline" id="form-agregar-al-carrito-3">
+            {% csrf_token %}
+            <input type="hidden" name="nombre" id="nombre" value="Sierra Electrica">
+            <input type="hidden" name="precio" id="precio" value="150000">
+            <input type="hidden" name="id_articulo" id="id_articulo" value="01">
+            <input type="hidden" name="unique_id" value="{{ unique_id }}">
+            <button type="submit" class="btn btn-secondary">Agregar al carrito</button>
+        </form> 
     </div>
   </div>
 
+<!-- PRODUCTO 2 -->
+<div class="card" style="width: 18rem;">
+    <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/sodimacCL/596900X_00/w=1500,h=1500" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Nombre: Taladro Percutor</h5>
+      <p class="card-text">Informacion: Si consideras que al iniciar una tarea es muy grato, esencial y útil contar con el elemento apropiado para cada uso profesional, entonces el Taladro Percutor inalámbrico 10 mm 12V + 1 batería de Bauker es el producto de ferretería que necesitas tener en tu taller.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Marca: Bauker</li>
+      <li class="list-group-item">Cantidad: 25</li>
+      <li class="list-group-item">Precio: 40.000</li>
+    </ul>
+    <div class="card-body">
+        <form action="{% url 'agregar' %}" method="post" class="d-inline" id="form-agregar-al-carrito-3">
+            {% csrf_token %}
+            <input type="hidden" name="nombre" id="nombre" value="Taladro Percutor">
+            <input type="hidden" name="precio" id="precio" value="40000">
+            <input type="hidden" name="id_articulo" id="id_articulo" value="02">
+            <input type="hidden" name="unique_id" value="{{ unique_id }}">
+            <button type="submit" class="btn btn-secondary">Agregar al carrito</button>
+        </form> 
+    </div>
+  </div>
 
+<!-- PRODUCTO 3 -->
+<div class="card" style="width: 18rem;">
+    <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/sodimacCL/8738750_00/w=1500,h=1500" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Nombre: Sepillo Electrico</h5>
+      <p class="card-text">Informacion:</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Marca: Bauker</li>
+      <li class="list-group-item">Cantidad: 60</li>
+      <li class="list-group-item">Precio: 68.900</li>
+    </ul>
+    <div class="card-body">
+        <form action="{% url 'agregar' %}" method="post" class="d-inline" id="form-agregar-al-carrito-3">
+            {% csrf_token %}
+            <input type="hidden" name="nombre" id="nombre" value="Sepillo Electrico">
+            <input type="hidden" name="precio" id="precio" value="68900">
+            <input type="hidden" name="id_articulo" id="id_articulo" value="03">
+            <input type="hidden" name="unique_id" value="{{ unique_id }}">
+            <button type="submit" class="btn btn-secondary">Agregar al carrito</button>
+        </form> 
+    </div>
+  </div>
 {% endblock %}

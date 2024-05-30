@@ -15,4 +15,9 @@ urlpatterns=[
     path('logout/', views.logout, name='logout'),
     path('register/', views.register, name='register'),
     path('accounts/profile/', views.profiles, name='profile'),
+
+    # URLS CARRITO
+    path('agregar/', views.agregar, name='agregar'),
+    path('carrito/', views.carrito, name='carrito'),
+    path('eliminar/', views.eliminar, name='eliminar'),
 ]
