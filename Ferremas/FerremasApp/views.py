@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import Productos, Articulo, Carrito_Compras
 from django.db import IntegrityError
@@ -120,7 +121,7 @@ def register(request):
 
 def logout(request):
     logout(request)
-    return redirect('web/index.html')
+    return redirect('index.html')
 
 def profiles(request):
     user = request.user
@@ -132,7 +133,7 @@ def profiles(request):
 def carrito(request):
     articulos = Articulo.objects.all()
     total = sum(float(articulo.valor) for articulo in articulos)  
-    print("Artículos:", articulos)
+    print("Articulos:", articulos)
     print("Total:", total)
     return render(request, 'compras/Carrito.html', {'articulos': articulos, 'total': total})
 
