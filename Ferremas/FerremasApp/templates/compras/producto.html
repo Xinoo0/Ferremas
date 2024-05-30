@@ -1,0 +1,31 @@
+{% extends 'web/index.html' %}
+
+{% block tittle %} Producto {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            {% for pro in Productos %}
+            <div>
+                <div>
+                    <img src="{{pro.foto.url}}" alt="">
+                </div>
+                <div>
+                    <div>
+                        <h3>{{pro.nombre_producto}}</h3>
+                        <p>{{pro.marca}}</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>{{pro.valor}}</p>
+                    </div>
+                    <br>
+                    <div>
+                        <p>Descripcion del producto</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'web/index.html' %}
+
+{% block tittle %} Tienda {% endblock %}
+
+{% block body %}
+
+{% load humanize%}
+
+<div class="card" style="width: 18rem;">
+    <img src="{{pro.foto.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Nombre: {{pro.nombre_producto}}</h5>
+      <p class="card-text">Informacion: {{pro.descripcion_producto}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Marca: {{pro.marca}}</li>
+      <li class="list-group-item">Cantidad: {{pro.cantidad}}</li>
+      <li class="list-group-item">Precio: {{pro.valor}}</li>
+    </ul>
+    <div class="card-body">
+      <button href="#" class="">Agregar al Carrito</button>
+      <button href="#" class="">Comprar Inmediatamente</button>
+    </div>
+  </div>
+
+
+{% endblock %}
