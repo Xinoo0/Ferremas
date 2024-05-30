@@ -1,0 +1,26 @@
+{% extends 'web/index.html' %}
+
+{% block tittle %} Registrarse {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Registro de usuario</h2>
+            
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="text-center">
+                {{error}}
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
